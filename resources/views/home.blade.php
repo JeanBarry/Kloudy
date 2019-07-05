@@ -24,8 +24,8 @@
             <div class="row" style="margin:0;width:100%;">
                 <div class="col">
                     <div style="height:7rem;text-align:center;margin-top:1.2em;color: #fff;"><i class="wi wi-cloudy" style="font-size:6rem;"></i></div>
-                    <p class="text-center" style="color:rgb(255,255,255);font-size:.7em;font-family:'Nunito Sans', sans-serif;">State</p>
-                    <p class="text-center" style="color:rgb(255,255,255);font-size:2.3em;font-family:'Nunito Sans', sans-serif;">Temperature</p>
+                    <p class="text-center" style="color:rgb(255,255,255);font-size:.7em;font-family:'Nunito Sans', sans-serif;">{{$State}} / {{$Humidity}}% Humidity</p>
+                    <p class="text-center" style="color:rgb(255,255,255);font-size:2.3em;font-family:'Nunito Sans', sans-serif;">{{$Temperature}}º C</p>
                 </div>
             </div>
         </div>
