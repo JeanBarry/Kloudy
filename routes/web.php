@@ -47,8 +47,7 @@ function callAPI($method, $url, $data){
 
 Route::get('/', function () {
     /* GeoIP Package*/
-    $remote_add = $_SERVER['REMOTE_ADDR'];
-    $arr_ip = geoip($remote_add);
+    $arr_ip = geoip()->getLocation();
         
     $city = $arr_ip->city;
     $country = $arr_ip->country;
