@@ -14,11 +14,11 @@
  </head>
  <body style="background-color:rgba(0,28,61,0.4);">
     <div class="container-fluid" style="height:100vh;padding:5em;">
-        <h1 class="text-monospace text-center" style="margin-bottom:1em;font-size:3.5em;font-family:Allerta, sans-serif;">Cloudy</h1>
+        <h1 class="text-monospace text-center" style="margin-bottom:1em;font-size:3.5em;font-family:Allerta, sans-serif;">Kloudy</h1>
         <div style="background-color:#2d364e;height:100%;padding:2.5em;">
             <div class="row">
                 <div class="col" style="margin-top:1em;">
-                    <p class="text-center" style="color:rgb(255,255,255);font-size:2.5em;font-family:'Nunito Sans', sans-serif;margin-top:.25em;">City</p>
+                    <p class="text-center" style="color:rgb(255,255,255);font-size:2.5em;font-family:'Nunito Sans', sans-serif;margin-top:.25em;">{{$City}}, {{$Country}}</p>
                 </div>
             </div>
             <div class="row" style="margin:0;width:100%;">

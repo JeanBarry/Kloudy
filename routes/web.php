@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+
+    $arr_ip = geoip()->getLocation();
+    /* var_dump($arr_ip); */
+    $city = $arr_ip->city;
+    $country = $arr_ip->country;
+
+    return view('home', ['City' => $city, 'Country' => $country]);
 });
