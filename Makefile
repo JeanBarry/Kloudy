@@ -14,6 +14,9 @@ install:
 	venv/bin/pip install -r requirements.txt
 
 start:
+	venv/bin/gunicorn 'main:app' -c gunicorn.conf.py
+
+start-dev:
 	venv/bin/python3 main.py
 
 lint:
