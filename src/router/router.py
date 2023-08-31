@@ -13,5 +13,5 @@ def router(server):
     @server.route('/api/weather', methods=['GET'])
     def show():
         if request.method == 'GET':
-            return weather.get_weather()
+            return weather.get_weather(request.args.get('latitude'), request.args.get('longitude'))
         return make_response(jsonify(message="Method not allowed"), 405)
