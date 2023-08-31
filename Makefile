@@ -16,5 +16,8 @@ install:
 start:
 	venv/bin/python3 main.py
 
+lint:
+	venv/bin/pylint --rcfile=.pylintrc main.py src
+
 clean:
 	rm -rf venv
