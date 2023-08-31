@@ -29,12 +29,19 @@ async function onLoad() {
     return;
   }
   const {latitude, longitude} = coordinates.coords;
-  const weather = await fetch(`/api/weather?latitude=${latitude}&longitude=${longitude}`).then(res => res.json());
-  if (weather.error) {
-    displayError(weather.error);
+  const weather = await fetch(`/api/weather?latitude=${latitude}&longitude=${longitude}`);
+  if (weather.status === 400) {
+    const errors = await weather.json();
+    console.error(errors);
+    displayError("Request could not be processed");
     return;
   }
-  updateWeather(weather);
+  const response = await weather.json();
+  if (response.error) {
+    displayError(response.error);
+    return;
+  }
+  updateWeather(response);
 }
 
 addEventListener('load', onLoad);
