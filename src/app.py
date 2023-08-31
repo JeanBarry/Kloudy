@@ -7,8 +7,7 @@ def app():
     """
     Create a Flask server and run it
 
-    Returns:
-        Flask: The Flask server
+    :returns: The Flask server
     """
     server = Flask(__name__)
     port = os.environ.get('SERVER_PORT', 80)
