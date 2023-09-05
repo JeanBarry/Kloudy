@@ -13,7 +13,9 @@ def validate_request(endpoint, data):
     dictionary will have a key 'valid' with a boolean value
     dictionary will have a key 'errors' with a list of errors if the request is not valid
     """
-    schema = schemas[endpoint]
+    schema = schemas.get(endpoint, None)
+    if not schema:
+        return {'valid': False, 'errors': ['Invalid endpoint']}
     validator = Validator(schema)
     if not validator.validate(data):
         return {'valid': False, 'errors': validator.errors}
