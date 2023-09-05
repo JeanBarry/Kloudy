@@ -23,9 +23,13 @@ def get_weather(latitude, longitude):
     response = requests.get(request_string, timeout=5)
 
     if response.status_code == 200:
-        location = response.json()['name']
-        description = response.json()['weather'][0]['description']
-        temperature = response.json()['main']['temp']
+        json_response = response.json()
+        location = json_response.get('name', None)
+        description = json_response.get('weather', [{}])[0].get('description', None)
+        temperature = json_response.get('main', {}).get('temp', None)
+
+        if not location or not description or not temperature:
+            return make_response(jsonify(error="Weather information not available"), 404)
 
         return make_response(jsonify(
             description=f"{description.capitalize()}",
